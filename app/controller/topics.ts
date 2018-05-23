@@ -1,8 +1,7 @@
 import { Controller } from 'egg';
 
-//参数检查
 const showRule = {
-  tab: { type: 'enum', values: [ 'ask', 'share', 'job' ], required: true },
+  tab: { type: 'enum', values: ['ask', 'share', 'job'], required: false },
 };
 
 export default class NewsController extends Controller {
@@ -10,7 +9,7 @@ export default class NewsController extends Controller {
   public async show() {
     const { ctx } = this;
     ctx.validate(showRule);
-    ctx.body = { statue: 200, msg: "fdafdaf" };
+    ctx.body = { statue: 200, msg: 'fdafdaf' };
   }
 
 }

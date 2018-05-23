@@ -1,4 +1,4 @@
-import {Service} from 'egg';
+import { Service } from 'egg';
 
 export interface NewsItem {
   id: number;
@@ -43,13 +43,7 @@ export class HackerNews extends Service {
       pageSize = 0;
     }
     try {
-      const result = await this.request('topstories.json', {
-        data: {
-          orderBy: '"$key"',
-          startAt: `"${pageSize * (page - 1)}"`,
-          endAt: `"${pageSize * page - 1}"`,
-        },
-      });
+      const result = [];
       return Object.keys(result).map((key) => result[key]);
     } catch (e) {
       this.ctx.logger.error(e);

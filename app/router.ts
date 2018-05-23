@@ -7,5 +7,5 @@ export default (app: Application) => {
   router.get('/news', controller.news.list);
   router.get('/news/item/:id', controller.news.detail);
   router.get('/news/user/:id', controller.news.user);
-  router.resources('topics','/api/topics',controller.topics);
+  router.resources('topics', '/api/topics', controller.topics);
 };
